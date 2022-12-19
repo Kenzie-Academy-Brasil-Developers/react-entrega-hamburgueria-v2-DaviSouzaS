@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { Input } from "../Input"
 import { Button } from "../Button"
+import { StyledRegisterFormBox } from "./style"
 import visibility from "../../assets/visibility-icon.svg"
 import visibilityOff from "../../assets/visibility-off-icon.svg"
 import * as yup from "yup"
@@ -34,29 +35,29 @@ export function RegisterForm () {
     const { register, handleSubmit, formState: { errors }, } = useForm({ resolver: yupResolver(validate) })
 
     return (
-        <form onSubmit={handleSubmit(registerUser)} noValidate>
+        <StyledRegisterFormBox className="form-box register-form" onSubmit={handleSubmit(registerUser)} noValidate>
 
-            <div>
+            <div className="input-field">
             <Input label={"Nome"} type="text" id="name" placeholder="Digite aqui seu nome" register = {register("name")}/>
-            {errors.name?.message && <p>{errors.name.message}</p>}
+            {errors.name?.message && <p className="waring">{errors.name.message}</p>}
             </div>
 
-            <div>
+            <div className="input-field">
             <Input label={"Email"} type="email" id="mail" placeholder="Email" register = {register("email")}/>
-            {errors.email?.message && <p>{errors.email.message}</p>}
+            {errors.email?.message && <p className="waring">{errors.email.message}</p>}
             </div>
 
-            <div>
-            <Input type={showPassword ? "text" : "password"} id="pass" placeholder="Senha" register = {register("password")} btnShowPass = {<button type="button" onClick={setShowPass}> <img src={showPassword ? visibilityOff : visibility} alt="eye-icon" /></button>}/>
-            {errors.password?.message && <p>{errors.password.message}</p>}
+            <div className="input-field">
+            <Input label={"Senha"} type={showPassword ? "text" : "password"} id="pass" placeholder="Senha" register = {register("password")} btnShowPass = {<button type="button" onClick={setShowPass}> <img className="visibility-btn" src={showPassword ? visibilityOff : visibility} alt="eye-icon" /></button>}/>
+            {errors.password?.message && <p className="waring">{errors.password.message}</p>}
             </div>
 
-            <div>
-            <Input type={showConfirmPass ? "text" : "password"} id="confirm" placeholder="Confirmar senha" register = {register("confirm")} btnShowPass = {<button type="button" onClick={setShowConfPass}> <img src={showConfirmPass ? visibilityOff : visibility} alt="eye-icon" /></button>}/>
-            {errors.confirm?.message && <p>{errors.confirm.message}</p>}
+            <div className="input-field">
+            <Input label={"Confirmar Senha"} type={showConfirmPass ? "text" : "password"} id="confirm" placeholder="Confirmar senha" register = {register("confirm")} btnShowPass = {<button type="button" onClick={setShowConfPass}> <img className="visibility-btn" src={showConfirmPass ? visibilityOff : visibility} alt="eye-icon" /></button>}/>
+            {errors.confirm?.message && <p className="waring">{errors.confirm.message}</p>}
             </div>
 
             <Button type = {"submit"} name = {"Cadastrar"}/>
-        </form>
+        </StyledRegisterFormBox>
     )
 }

@@ -18,7 +18,7 @@ export const Displays = createGlobalStyle`
     align-items: center;
 }
 
-.justfy-content-between {
+.justify-content-between {
     justify-content: space-between;
 }
 
