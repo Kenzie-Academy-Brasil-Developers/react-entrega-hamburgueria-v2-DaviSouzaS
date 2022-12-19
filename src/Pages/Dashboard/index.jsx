@@ -1,4 +1,5 @@
 import { UserContext } from "../../contexts/UserContext";
+import { ToastContainer } from "react-toastify"
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
 
@@ -9,5 +10,10 @@ export function Dashboard() {
         return null;
     }
 
-    return user ? <div> <button type="button" onClick={logout}>Sair</button> </div> : <Navigate to = "/"/>
+    return user ? 
+    <div> 
+        <button type="button" onClick={logout}>Sair</button> 
+        <ToastContainer/>
+    </div>
+     : <Navigate to = "/"/>
 }

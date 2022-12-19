@@ -5,6 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { Input } from "../Input"
 import { Button } from "../Button"
 import { StyledLoginFormBox } from "./style"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import visibility from "../../assets/visibility-icon.svg"
 import visibilityOff from "../../assets/visibility-off-icon.svg"
 import spinner from "../../assets/spinner.svg"
@@ -35,7 +37,9 @@ export function LoginForm () {
                 {errors.password?.message && <p className="waring">{errors.password.message}</p>}
             </div>
 
-            <Button type={"submit"} name = {loading ? <><img src={spinner} alt="loading-icon" /></> : <>Logar</>}/>
+            <Button type={"submit"} name = {loading ? <><img className="loading-icon" src={spinner} alt="loading-icon" /></> : <>Logar</>}/>
+
+            <ToastContainer/>
         </StyledLoginFormBox>
     )
 }
