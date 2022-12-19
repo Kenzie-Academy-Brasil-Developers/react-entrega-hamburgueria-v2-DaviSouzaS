@@ -5,6 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { Input } from "../Input"
 import { Button } from "../Button"
 import { StyledRegisterFormBox } from "./style"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import visibility from "../../assets/visibility-icon.svg"
 import visibilityOff from "../../assets/visibility-off-icon.svg"
 import * as yup from "yup"
@@ -58,6 +60,8 @@ export function RegisterForm () {
             </div>
 
             <Button type = {"submit"} name = {"Cadastrar"}/>
+
+            <ToastContainer/>
         </StyledRegisterFormBox>
     )
 }

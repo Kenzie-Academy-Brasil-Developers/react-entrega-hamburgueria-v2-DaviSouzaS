@@ -57,4 +57,14 @@ export const StyledButtons = createGlobalStyle`
         width: 16px;
         opacity: 50%;
     }
+
+    .login-form .loading-icon {
+        animation: loadingIcon 2s;
+    }
+
+    @keyframes loadingIcon {
+    to {
+       transform: rotate(2turn);
+    }
+    }
 `
