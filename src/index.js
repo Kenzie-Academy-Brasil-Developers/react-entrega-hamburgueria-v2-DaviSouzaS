@@ -1,11 +1,17 @@
+import { UserProvider } from './contexts/UserContext';
+import { GlobalStyles } from './styles/globalStyles.js';
+import { StyledButtons } from './styles/buttons';
+import { Displays } from './styles/displays';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import { UserProvider } from './contexts/UserContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Displays/>
+    <GlobalStyles/>
+    <StyledButtons/>
     <UserProvider>
       <App />
     </UserProvider>
