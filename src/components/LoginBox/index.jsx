@@ -9,7 +9,7 @@ export function LoginBox() {
         </div>
         <LoginForm />
         <p>Crie sua conta para saborear muitas delícias e matar sua fome!</p>
-        <a className="button-register display-flex justify-content-center align-item" href="/">Cadastrar</a>
+        <a className="button-register display-flex justify-content-center align-item" href="/registerPage">Cadastrar</a>
     </StyledLoginBox>
   );
 }
