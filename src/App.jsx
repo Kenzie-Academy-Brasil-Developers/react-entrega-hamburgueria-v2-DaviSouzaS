@@ -1,9 +1,9 @@
-import { RegisterPage } from "./Pages/RegisterPage";
+import { PrincipalRoutes } from "./routes";
 
 function App() {
   return (
-    <RegisterPage/>
-  );
+    <PrincipalRoutes/>
+  )
 }
 
 export default App;
