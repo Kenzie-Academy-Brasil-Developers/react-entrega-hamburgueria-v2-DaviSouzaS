@@ -67,4 +67,33 @@ export const StyledButtons = createGlobalStyle`
        transform: rotate(2turn);
     }
     }
+
+    .search-btn {
+        cursor: pointer;
+        width: 53px;
+        height: 40px;
+        margin-right: 10px;
+        background-color: var(--color-primary);
+        border: none;
+        border-radius: var(--radius-2);
+    }
+
+    .search-btn:hover {
+        transition-duration: 0.3s;
+        background-color: var(--green-1);
+    }
+
+    .cart-btn {
+        cursor: pointer;
+        margin-left: 23px;
+        margin-right: 38px;
+        border: none;
+        background-color: transparent;
+    }
+
+    .logout-btn {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
 `

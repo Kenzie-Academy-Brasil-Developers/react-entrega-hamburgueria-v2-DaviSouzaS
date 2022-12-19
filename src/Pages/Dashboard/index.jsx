@@ -2,9 +2,10 @@ import { UserContext } from "../../contexts/UserContext";
 import { ToastContainer } from "react-toastify"
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
+import { Header } from "../../components/Header";
 
 export function Dashboard() {
-  const { loadingPage, user, logout } = useContext(UserContext);
+  const { loadingPage, user } = useContext(UserContext);
 
     if (loadingPage) {
         return null;
@@ -12,7 +13,7 @@ export function Dashboard() {
 
     return user ? 
     <div> 
-        <button type="button" onClick={logout}>Sair</button> 
+      <Header/>
         <ToastContainer/>
     </div>
      : <Navigate to = "/"/>
