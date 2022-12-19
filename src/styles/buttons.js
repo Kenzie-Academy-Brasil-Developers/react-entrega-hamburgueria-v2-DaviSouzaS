@@ -23,6 +23,17 @@ export const StyledButtons = createGlobalStyle`
         background-color: var(--green-1);
     }
 
+    .register-form > button {
+        background-color: var(--grey-0);
+        color: var(--grey-5);
+        margin-top: 10px;
+    }
+
+    .register-form > button:hover {
+        transition-duration: 0.3s;
+        background-color: var(--grey-1);
+    }
+
     .button-register {
         background-color: var(--grey-0);
         color: var(--grey-5);
