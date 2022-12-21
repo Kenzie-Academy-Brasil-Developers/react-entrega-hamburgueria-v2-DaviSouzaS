@@ -22,6 +22,14 @@ export const Displays = createGlobalStyle`
     justify-content: space-between;
 }
 
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.flex-warp {
+    flex-wrap: wrap;
+}
+
 .gap-16 {
     gap: 16px;
 }
@@ -36,6 +44,10 @@ export const Displays = createGlobalStyle`
 
 .gap-30 {
     gap: 30px;
+}
+
+.gap-50 {
+    gap: 50px;
 }
 
 .gap-60 {

@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     --green-1: #219653;
     --grey-6: #333333;
     --grey-5: #999999;
+    --grey-4: #BDBDBD;
     --grey-3: #828282;
     --grey-1: #E0E0E0;
     --grey-0: #F5F5F5;

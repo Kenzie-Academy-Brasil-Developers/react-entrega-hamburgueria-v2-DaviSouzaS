@@ -11,7 +11,7 @@ export function Header () {
     const { logout } = useContext(UserContext);
 
     return ( 
-        <StyledHeader className="headerMobile">
+        <StyledHeader>
             <div className="container header-box display-flex justify-content-between">
                 <img src={logoKenzie} alt="logo-kenzie-hamburgueria" />
                 <div className="display-flex">
