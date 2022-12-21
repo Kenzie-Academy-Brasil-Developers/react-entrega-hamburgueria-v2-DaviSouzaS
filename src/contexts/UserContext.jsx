@@ -9,9 +9,8 @@ export function UserProvider({ children }) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState(null);
+  const [product, setProducts] = useState(null);
   const [loadingPage, setLoadingPage] = useState(true);
-
 
   const navigate = useNavigate();
 
@@ -34,7 +33,7 @@ export function UserProvider({ children }) {
 
       const products = await request.get("/products", config);
 
-      setUser(products.data);
+      setProducts(products.data);
 
       setLoading(false);
 
@@ -79,7 +78,7 @@ export function UserProvider({ children }) {
 
     try {
       const products = await request.get("/products", config);
-      setUser(products.data);
+      setProducts(products.data);
     } catch (error) {
       window.localStorage.clear();
     } finally {
@@ -91,7 +90,7 @@ export function UserProvider({ children }) {
   }, []);
 
   function logout() {
-    setUser(null);
+    setProducts(null);
     window.localStorage.clear();
     navigate("/");
   }
@@ -154,7 +153,7 @@ export function UserProvider({ children }) {
         registerUser,
         setShowConfPass,
         showConfirmPass,
-        user,
+        product,
         loadingPage,
         logout,
       }}
