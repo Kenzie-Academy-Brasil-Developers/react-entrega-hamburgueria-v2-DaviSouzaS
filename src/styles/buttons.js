@@ -68,21 +68,6 @@ export const StyledButtons = createGlobalStyle`
     }
     }
 
-    .search-btn {
-        cursor: pointer;
-        width: 53px;
-        height: 40px;
-        margin-right: 10px;
-        background-color: var(--color-primary);
-        border: none;
-        border-radius: var(--radius-2);
-    }
-
-    .search-btn:hover {
-        transition-duration: 0.3s;
-        background-color: var(--green-1);
-    }
-
     .cart-btn {
         cursor: pointer;
         margin-left: 23px;
@@ -95,5 +80,20 @@ export const StyledButtons = createGlobalStyle`
         cursor: pointer;
         border: none;
         background-color: transparent;
+    }
+
+    .search-input > button {
+        cursor: pointer;
+        width: 53px;
+        height: 40px;
+        margin-right: 10px;
+        background-color: var(--color-primary);
+        border: none;
+        border-radius: var(--radius-2);
+    }
+
+    .search-input > button:hover {
+        transition-duration: 0.3s;
+        background-color: var(--green-1);
     }
 `
