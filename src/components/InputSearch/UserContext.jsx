@@ -158,7 +158,7 @@ export function UserProvider({ children }) {
         loadingPage,
         logout,
         search, 
-        setSearch
+        setSearch,
       }}
     >
       {children}
