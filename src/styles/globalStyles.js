@@ -26,10 +26,12 @@ export const GlobalStyles = createGlobalStyle`
     --font-size-6: 14px;
     --font-size-7: 12px;
 
+    --font-weight-0: 900;
     --font-weight-1: 700;
     --font-weight-2: 600;
     --font-weight-3: 500;
     --font-weight-4: 400;
+    --font-weight-5: 200;
 
     --radius-1: 5px;
     --radius-2: 8px;
