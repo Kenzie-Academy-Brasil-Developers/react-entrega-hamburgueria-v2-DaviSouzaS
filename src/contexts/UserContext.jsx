@@ -12,7 +12,7 @@ export function UserProvider({ children }) {
   const [product, setProducts] = useState(null);
   const [loadingPage, setLoadingPage] = useState(true);
   const [search, setSearch] = useState('');
-
+  
   const navigate = useNavigate();
 
   async function login(data) {
@@ -158,7 +158,7 @@ export function UserProvider({ children }) {
         loadingPage,
         logout,
         search, 
-        setSearch
+        setSearch,
       }}
     >
       {children}

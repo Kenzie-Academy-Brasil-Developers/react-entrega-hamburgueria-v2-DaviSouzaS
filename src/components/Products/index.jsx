@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 import { StyledProduct } from "./style";
-import { Button } from "../Button";
 
 export function Products({ item }) {
+
+  const { addInCart } = useContext(CartContext)
 
   return (
   <StyledProduct>
@@ -12,7 +15,7 @@ export function Products({ item }) {
       <p className="product-name">{item.name}</p>
       <p className="product-category">{item.category}</p>
       <p className="product-price">R$ {item.price}</p>
-      <Button type={"button"} name={"Adicionar"}/>
+      <button type="button" onClick={() => addInCart(item.id)}>Adicionar</button>
     </div>
   </StyledProduct>
   )

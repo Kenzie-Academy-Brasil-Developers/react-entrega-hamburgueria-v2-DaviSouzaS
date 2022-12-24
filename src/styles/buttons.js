@@ -70,8 +70,6 @@ export const StyledButtons = createGlobalStyle`
 
     .cart-btn {
         cursor: pointer;
-        margin-left: 23px;
-        margin-right: 38px;
         border: none;
         background-color: transparent;
     }
@@ -95,5 +93,23 @@ export const StyledButtons = createGlobalStyle`
     .search-input > button:hover {
         transition-duration: 0.3s;
         background-color: var(--green-1);
+    }
+
+    .clean-cart-btn {
+        cursor: pointer;
+        width: 100%;
+        height: 60px;
+        border: none;
+        border-radius: var(--radius-2);
+        background-color: var(--grey-1);
+        color: var(--grey-3);
+        font-weight: var(--font-weight-2);
+        font-size: var(--font-size-4);
+    }
+
+    .clean-cart-btn:hover {
+        transition-duration: 0.3s;
+        background-color: var(--grey-4);
+        color: var(--grey-0);
     }
 `
