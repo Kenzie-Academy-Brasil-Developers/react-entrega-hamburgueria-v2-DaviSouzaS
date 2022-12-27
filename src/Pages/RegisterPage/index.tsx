@@ -1,6 +1,5 @@
 import { DefaultBanner } from "../../components/DefaultBanner"
 import { RegisterBox } from "../../components/RegisterBox"
-import { ToastContainer } from "react-toastify"
 import { StyledRegisterPage } from "./style"
 
 export function RegisterPage () {

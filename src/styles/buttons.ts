@@ -80,7 +80,7 @@ export const StyledButtons = createGlobalStyle`
         background-color: transparent;
     }
 
-    .search-input > button {
+    .fake-search-button {
         cursor: pointer;
         width: 53px;
         height: 40px;
@@ -90,7 +90,7 @@ export const StyledButtons = createGlobalStyle`
         border-radius: var(--radius-2);
     }
 
-    .search-input > button:hover {
+    .fake-search-button:hover {
         transition-duration: 0.3s;
         background-color: var(--green-1);
     }

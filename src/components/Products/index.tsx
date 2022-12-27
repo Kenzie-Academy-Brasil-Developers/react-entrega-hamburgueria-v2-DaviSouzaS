@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
+import { IproductItem } from "../../contexts/UserContext";
 import { StyledProduct } from "./style";
 
-export function Products({ item }) {
+interface IproductCardProps {
+  item: IproductItem
+}
 
+export function Products({ item }:IproductCardProps) {
   const { addInCart } = useContext(CartContext)
 
   return (

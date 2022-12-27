@@ -1,9 +1,14 @@
 import { useContext } from "react"
 import { CartContext } from "../../contexts/CartContext"
-import trashIcon from "../../assets/trash-icon.svg"
 import { StyledcartProdcutCard } from "./style"
+import { IproductItem } from "../../contexts/UserContext"
+import trashIcon from "../../assets/trash-icon.svg"
 
-export function CartProducts ({item}) {
+interface IcartProductsCardProps {
+    item: IproductItem
+}
+
+export function CartProducts ({ item }:IcartProductsCardProps) {
 
     const { removeProduct } = useContext(CartContext)
 

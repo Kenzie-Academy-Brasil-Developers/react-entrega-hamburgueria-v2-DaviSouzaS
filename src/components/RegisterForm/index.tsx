@@ -3,9 +3,9 @@ import { UserContext } from "../../contexts/UserContext"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { Input } from "../Input"
-import { Button } from "../Button"
 import { StyledRegisterFormBox } from "./style"
 import { ToastContainer } from "react-toastify"
+import { FormRegister } from "../../contexts/UserContext"
 import "react-toastify/dist/ReactToastify.css"
 import visibility from "../../assets/visibility-icon.svg"
 import visibilityOff from "../../assets/visibility-off-icon.svg"
@@ -34,7 +34,7 @@ export function RegisterForm () {
         .oneOf([yup.ref('password')], "As senhas não coincidem"),
     })
 
-    const { register, handleSubmit, formState: { errors }, } = useForm({ resolver: yupResolver(validate) })
+    const { register, handleSubmit, formState: { errors }, } = useForm<FormRegister>({ resolver: yupResolver(validate) })
 
     return (
         <StyledRegisterFormBox className="form-box register-form" onSubmit={handleSubmit(registerUser)} noValidate>
@@ -58,8 +58,7 @@ export function RegisterForm () {
             <Input label={"Confirmar Senha"} type={showConfirmPass ? "text" : "password"} id="confirm" placeholder="Confirmar senha" register = {register("confirm")} btnShowPass = {<button type="button" onClick={setShowConfPass}> <img className="visibility-btn" src={showConfirmPass ? visibilityOff : visibility} alt="eye-icon" /></button>}/>
             {errors.confirm?.message && <p className="waring">{errors.confirm.message}</p>}
             </div>
-
-            <Button type = {"submit"} name = {"Cadastrar"}/>
+            <button type="submit">Cadastrar</button>
 
             <ToastContainer/>
         </StyledRegisterFormBox>
