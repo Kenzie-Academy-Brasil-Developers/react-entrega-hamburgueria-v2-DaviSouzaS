@@ -3,9 +3,9 @@ import { UserContext } from "../../contexts/UserContext"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { Input } from "../Input"
-import { Button } from "../Button"
 import { StyledLoginFormBox } from "./style"
 import { ToastContainer } from "react-toastify"
+import { FormLogin } from "../../contexts/UserContext"
 import "react-toastify/dist/ReactToastify.css"
 import visibility from "../../assets/visibility-icon.svg"
 import visibilityOff from "../../assets/visibility-off-icon.svg"
@@ -22,7 +22,7 @@ export function LoginForm () {
         password: yup.string().required("A senha é obrigatória")
     })
 
-    const { register, handleSubmit, formState: { errors }, } = useForm({ resolver: yupResolver(validate) })
+    const { register, handleSubmit, formState: { errors }, } = useForm<FormLogin>({ resolver: yupResolver(validate) })
 
     return (
         <StyledLoginFormBox className="form-box login-form" onSubmit={handleSubmit(login)}>
@@ -37,7 +37,7 @@ export function LoginForm () {
                 {errors.password?.message && <p className="waring">{errors.password.message}</p>}
             </div>
 
-            <Button type={"submit"} name = {loading ? <><img className="loading-icon" src={spinner} alt="loading-icon" /></> : <>Logar</>}/>
+            <button type="submit"> {loading ? <><img className="loading-icon" src={spinner} alt="loading-icon" /></> : <>Logar</>} </button>
 
             <ToastContainer/>
         </StyledLoginFormBox>

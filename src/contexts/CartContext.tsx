@@ -1,35 +1,51 @@
 import { createContext, useState, useContext } from "react";
+import { IproductItem } from "./UserContext";
 import { UserContext } from "./UserContext";
 import { toast } from "react-toastify";
 
-export const CartContext = createContext({});
+interface IcartProviderProps {
+  children: React.ReactNode;
+}
 
-export function CartProvider({ children }) {
+interface IcartProvider {
+  modal: boolean;
+  openModal: () => void;
+  closeModal: () => void;
+  addInCart: (productId: number) => void;
+  cart: IproductItem[];
+  productsSumValue: number;
+  cleanCart: () => void;
+  removeProduct: (id: number) => void;
+}
+
+export const CartContext = createContext({} as IcartProvider);
+
+export function CartProvider({ children }: IcartProviderProps) {
 
   const { product } = useContext(UserContext)
 
   const [modal, setModal] = useState(false);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([] as IproductItem[]);
   
   function openModal() {
     setModal(true);
   }
-
+  
   function closeModal() {
     setModal(false);
   }
 
-  function addInCart(productId) {
-    const FoundProduct = product.find(element => element.id === productId)
-    toastAddInCart()
+  function addInCart(productId:number) {
+    const FoundProduct = product.find(element => element.id === productId)!
     setCart([...cart, FoundProduct])
+    toastAddInCart()
   }
 
   function cleanCart () {
     setCart([])
   }
 
-  function removeProduct (id) {
+  function removeProduct (id:number) {
     const removeProduct = cart.filter((product) => product.id !== id)
     setCart(removeProduct)
   }

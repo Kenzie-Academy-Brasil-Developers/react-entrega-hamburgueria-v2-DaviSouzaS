@@ -13,7 +13,7 @@ export function ProductsList() {
   return (
     <StyledProductsList className="display-flex flex-warp gap-50 container">
         {searchedProducts.map((item) => (
-        <Products key={item.id} item={item} />
+        <Products key={item.id} item={item}/>
         ))}
     </StyledProductsList>
 )

@@ -30,7 +30,7 @@ export function CartModal () {
                 <div className="total-value-box">
                     <div className="cart-infos display-flex justify-content-between">
                         <p>Total</p>
-                        <p className="total-value">R$ {productsSumValue}</p>
+                        <p className="total-value">R$ {productsSumValue.toFixed(2)}</p>
                     </div>
                     <button onClick={() => cleanCart()} className="clean-cart-btn">Remover todos</button>
                 </div>

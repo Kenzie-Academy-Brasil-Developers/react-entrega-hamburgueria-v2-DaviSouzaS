@@ -1,9 +1,7 @@
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { StyledInputSearch } from "./style"
-import { Button } from "../Button"
 import searchIcon from "../../assets/search-icon.svg"
-
 
 export function InputSearch () {
 
@@ -12,7 +10,9 @@ export function InputSearch () {
     return ( 
         <StyledInputSearch className="search-input display-flex justify-content-between align-item">
             <input type="text" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Digitar Pesquisa"/>
-            <Button type={"submit"} name={<img src={searchIcon} alt="search-icon"/>}/>
+            <div className="fake-search-button display-flex justify-content-center align-item">
+                <img src={searchIcon} alt="search-icon"/>
+            </div>
         </StyledInputSearch>
     )
 }

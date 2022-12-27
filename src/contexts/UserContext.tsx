@@ -3,19 +3,71 @@ import { toast } from "react-toastify";
 import { request } from "../services/api";
 import { useNavigate } from "react-router-dom";
 
-export const UserContext = createContext({});
+interface IuserProviderProps {
+  children: React.ReactNode;
+}
 
-export function UserProvider({ children }) {
+export interface IproductItem {
+  id: number;
+  name: string;
+  category: string;
+  price: number;
+  img: string;
+}
+
+interface IdataLogin {
+  email: string;
+  password: string;
+}
+
+interface IdataRegister {
+  name: string;
+  email: string;
+  password: string; 
+}
+
+interface IuserProvider {
+  showPassword: boolean;
+  setShowPass: () => void;
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  login: (data: IdataLogin) => Promise<void>;
+  registerUser: (data: IdataRegister) => Promise<void>;
+  setShowConfPass: () => void;
+  showConfirmPass: boolean;
+  product: IproductItem[] ;
+  loadingPage: boolean;
+  logout: () => void;
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export type FormLogin = {
+  email: string;
+  password: string;
+}
+
+export type FormRegister = {
+  name: string;
+  email: string;
+  password: string;
+  confirm: string;
+}
+
+export const UserContext = createContext({} as IuserProvider);
+
+export function UserProvider({ children }: IuserProviderProps) {
+
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [product, setProducts] = useState(null);
+  const [product, setProducts] = useState([] as IproductItem[]);
   const [loadingPage, setLoadingPage] = useState(true);
   const [search, setSearch] = useState('');
-  
+
   const navigate = useNavigate();
 
-  async function login(data) {
+  async function login(data:IdataLogin) {
     try {
 
       setLoading(true);
@@ -50,7 +102,7 @@ export function UserProvider({ children }) {
     }
   }
 
-  async function registerUser (data) {
+  async function registerUser (data:IdataRegister) {
     try {
       const response = await request.post("/users", data);
       toastSuccessRegister()
@@ -91,7 +143,7 @@ export function UserProvider({ children }) {
   }, []);
 
   function logout() {
-    setProducts(null);
+    setProducts([]);
     window.localStorage.clear();
     navigate("/");
   }
