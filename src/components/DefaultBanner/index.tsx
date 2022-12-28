@@ -5,15 +5,15 @@ import bag from "../../assets/shopping-bag.svg"
 
 export function DefaultBanner () {
     return (
-        <StyledBanner>
+        <StyledBanner className="banner-mobile">
             <img src={logo} alt="site-logo" />
-            <div className="slogan-box display-flex justify-content-center align-item gap-30">
-                <div className="display-flex justify-content-center align-item"> 
+            <div className="slogan-box display-flex justify-content-center align-item gap-30 gap-14-moblie">
+                <div className="display-flex justify-content-center align-item bag-icon-mobilde"> 
                     <img src={bag} alt="bag-icon" />
                 </div>
                 <p>A vida é como um sanduíche, é preciso recheá-la com os <span>melhores</span> ingredientes.</p>
             </div>
-            <img src={art} alt="art-img" />
+            <img className="display-none-mobile" src={art} alt="art-img" />
         </StyledBanner>
     )
 }

@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     --green-1: #219653;
     --grey-6: #333333;
     --grey-5: #999999;
+    --grey-4: #BDBDBD;
     --grey-3: #828282;
     --grey-1: #E0E0E0;
     --grey-0: #F5F5F5;
@@ -25,10 +26,12 @@ export const GlobalStyles = createGlobalStyle`
     --font-size-6: 14px;
     --font-size-7: 12px;
 
+    --font-weight-0: 900;
     --font-weight-1: 700;
     --font-weight-2: 600;
     --font-weight-3: 500;
     --font-weight-4: 400;
+    --font-weight-5: 200;
 
     --radius-1: 5px;
     --radius-2: 8px;
