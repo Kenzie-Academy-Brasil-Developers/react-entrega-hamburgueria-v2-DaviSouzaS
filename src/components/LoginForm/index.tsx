@@ -25,7 +25,7 @@ export function LoginForm () {
     const { register, handleSubmit, formState: { errors }, } = useForm<FormLogin>({ resolver: yupResolver(validate) })
 
     return (
-        <StyledLoginFormBox className="form-box login-form" onSubmit={handleSubmit(login)}>
+        <StyledLoginFormBox className="form-box form-box-mobile login-form" onSubmit={handleSubmit(login)}>
         
             <div className="input-field">
                 <Input label={"Email"} type="email" id="email" placeholder="Digite aqui seu email" register = {register("email")}/> 

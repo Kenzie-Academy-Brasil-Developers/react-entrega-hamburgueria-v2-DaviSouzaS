@@ -22,7 +22,7 @@ export const CartContext = createContext({} as IcartProvider);
 
 export function CartProvider({ children }: IcartProviderProps) {
 
-  const { product } = useContext(UserContext)
+  const { product, closeSearchMobile } = useContext(UserContext)
 
   const [modal, setModal] = useState(false);
   const [cart, setCart] = useState([] as IproductItem[]);
@@ -37,6 +37,7 @@ export function CartProvider({ children }: IcartProviderProps) {
 
   function addInCart(productId:number) {
     const FoundProduct = product.find(element => element.id === productId)!
+    closeSearchMobile()
     setCart([...cart, FoundProduct])
     toastAddInCart()
   }

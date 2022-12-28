@@ -40,6 +40,9 @@ interface IuserProvider {
   logout: () => void;
   search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
+  searchMobile: boolean;
+  openSearchMobile: () => void;
+  closeSearchMobile: () => void;
 }
 
 export type FormLogin = {
@@ -64,6 +67,7 @@ export function UserProvider({ children }: IuserProviderProps) {
   const [product, setProducts] = useState([] as IproductItem[]);
   const [loadingPage, setLoadingPage] = useState(true);
   const [search, setSearch] = useState('');
+  const [searchMobile, setSearchMobile] = useState(false);
 
   const navigate = useNavigate();
 
@@ -156,6 +160,14 @@ export function UserProvider({ children }: IuserProviderProps) {
     setShowConfirmPass(!showConfirmPass);
   }
 
+  function openSearchMobile () {
+    setSearchMobile(true)
+  }
+
+  function closeSearchMobile () {
+    setSearchMobile(false)
+  }
+
   function toastError() {
     toast.error("Ops! Algo deu errado", {
       position: "top-right",
@@ -211,6 +223,9 @@ export function UserProvider({ children }: IuserProviderProps) {
         logout,
         search, 
         setSearch,
+        searchMobile,
+        openSearchMobile,
+        closeSearchMobile
       }}
     >
       {children}

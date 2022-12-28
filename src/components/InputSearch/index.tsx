@@ -8,7 +8,7 @@ export function InputSearch () {
     const { search, setSearch } = useContext(UserContext);
 
     return ( 
-        <StyledInputSearch className="search-input display-flex justify-content-between align-item">
+        <StyledInputSearch className="search-input display-flex justify-content-between align-item search-input-mobile">
             <input type="text" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Digitar Pesquisa"/>
             <div className="fake-search-button display-flex justify-content-center align-item">
                 <img src={searchIcon} alt="search-icon"/>

@@ -11,7 +11,7 @@ export function ProductsList() {
     item.name.toLowerCase().includes(searchLowerCase));
 
   return (
-    <StyledProductsList className="display-flex flex-warp gap-50 container">
+    <StyledProductsList className="display-flex flex-warp gap-50 container product-list-mobile flex-no-warp gap-20-mobile">
         {searchedProducts.map((item) => (
         <Products key={item.id} item={item}/>
         ))}

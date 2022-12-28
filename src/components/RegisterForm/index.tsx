@@ -37,7 +37,7 @@ export function RegisterForm () {
     const { register, handleSubmit, formState: { errors }, } = useForm<FormRegister>({ resolver: yupResolver(validate) })
 
     return (
-        <StyledRegisterFormBox className="form-box register-form" onSubmit={handleSubmit(registerUser)} noValidate>
+        <StyledRegisterFormBox className="form-box form-box-mobile register-form" onSubmit={handleSubmit(registerUser)} noValidate>
 
             <div className="input-field">
             <Input label={"Nome"} type="text" id="name" placeholder="Digite aqui seu nome" register = {register("name")}/>

@@ -8,7 +8,7 @@ export function LoginPage () {
     const token = localStorage.getItem("@TOKEN");
 
     return token === null ?
-        <StyledLoginPage className="display-flex justify-content-center align-item gap-60">
+        <StyledLoginPage className="display-flex justify-content-center align-item gap-60 column-reverse-mobile page-mobile gap-14-moblie">
             <LoginBox/>
             <DefaultBanner/>
         </StyledLoginPage>
