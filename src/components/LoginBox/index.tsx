@@ -3,7 +3,7 @@ import { StyledLoginBox } from "./style";
 
 export function LoginBox() {
   return (
-    <StyledLoginBox className="display-flex flex-direction-column justify-content-center align-item">
+    <StyledLoginBox className="display-flex flex-direction-column justify-content-center align-item login-box-mobile">
         <div className="title-box">
           <h1>Login</h1>
         </div>

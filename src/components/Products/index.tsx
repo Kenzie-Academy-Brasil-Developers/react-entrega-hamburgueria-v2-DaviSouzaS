@@ -11,7 +11,7 @@ export function Products({ item }:IproductCardProps) {
   const { addInCart } = useContext(CartContext)
 
   return (
-  <StyledProduct>
+  <StyledProduct className="product-mobile">
     <div className="img-product-box display-flex justify-content-center align-item">
       <img src={item.img} alt={item.name} />
     </div>

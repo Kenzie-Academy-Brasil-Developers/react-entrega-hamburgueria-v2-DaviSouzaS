@@ -4,7 +4,7 @@ export const StyledBanner = styled.div`
     width: 377px;
     
     .slogan-box {
-        width: 95%;
+        width: 100%;
         height: 95px;
         border: 1px solid var(--grey-1);
         border-radius: var(--radius-1);

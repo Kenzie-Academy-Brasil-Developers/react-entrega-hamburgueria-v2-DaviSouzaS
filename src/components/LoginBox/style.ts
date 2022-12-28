@@ -11,7 +11,7 @@ export const StyledLoginBox = styled.div`
     }
 
     > p {
-        width: 327px;
+        width: 65%;
         text-align: center;
         font-size: var(--font-size-6);
         font-weight: var(--font-weight-4);

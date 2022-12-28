@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledProduct = styled.li`
     width: 260px;
+    min-width: 260px;
     height: 326px;
     background-color: var(--white);
     border: 2px solid var(--grey-1);

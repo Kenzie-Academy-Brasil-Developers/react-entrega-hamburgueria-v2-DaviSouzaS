@@ -112,4 +112,9 @@ export const StyledButtons = createGlobalStyle`
         background-color: var(--grey-4);
         color: var(--grey-0);
     }
+
+    .search-btn {
+        border: none;
+        background-color: transparent;
+    }
 `
