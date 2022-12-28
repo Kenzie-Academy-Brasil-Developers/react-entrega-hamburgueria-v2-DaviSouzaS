@@ -15,8 +15,7 @@ export function Dashboard() {
   if (loadingPage) {
     return null;
   }
-
-  return product ? (
+  return product.length !== 0 ? 
     <div>
 
       {modal && <CartModal/>}
@@ -29,7 +28,6 @@ export function Dashboard() {
 
       <ToastContainer />
     </div>
-  ) : (
+  : 
     <Navigate to="/" />
-  );
 }
