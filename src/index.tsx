@@ -3,6 +3,7 @@ import { GlobalStyles } from './styles/globalStyles';
 import { StyledButtons } from './styles/buttons';
 import { BrowserRouter } from 'react-router-dom';
 import { Displays } from './styles/displays';
+import { CartProvider } from './contexts/CartContext';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -15,7 +16,9 @@ root.render(
     <GlobalStyles/>
     <StyledButtons/>
     <UserProvider>
-      <App />
+      <CartProvider>
+        <App />
+      </CartProvider>
     </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
