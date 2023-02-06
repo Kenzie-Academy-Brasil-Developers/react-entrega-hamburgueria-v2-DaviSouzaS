@@ -15,6 +15,7 @@ export function Dashboard() {
   if (loadingPage) {
     return null;
   }
+  
   return product.length !== 0 ? 
     <div>
 
